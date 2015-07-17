@@ -1,0 +1,14 @@
+<h1 class="page-header"><i class="fa fa-bolt"></i> <%= @superhero.name %></h1>
+
+<div class="team-profile container">
+  <ul class="list-unstyled well">
+    <li><%= image_tag(@superhero.image_url, class:"thumbnail profile-img") %></li>
+    <li><p>Bio: <%= @superhero.bio %></p></li>
+    <li><p>Height: <%= @superhero.height %></p></li>
+    <li><p>Team: <%= @superhero.team.name %></p></li>
+  </ul>
+</div>
+<div class="links">
+  <%= link_to "Edit", edit_superhero_path(@superhero), class:"btn btn-info" %>
+  <%= link_to "Delete", @superhero, method: :delete, data: {alert: "Are you sure?"},  class:"btn btn-warning" %>
+</div>
